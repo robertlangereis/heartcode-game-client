@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
 import {getGames, joinGame, updateGame} from '../../actions/games'
 import {getUsers} from '../../actions/users'
+import Button from '@material-ui/core/Button'
 import {userId} from '../../jwt'
 import ShowHand from './ShowHand'
 import ShowStack from './ShowStack'
@@ -87,7 +88,10 @@ class GameDetails extends PureComponent {
           {
             game.status === 'pending' &&
             game.players.map(p => p.userId).indexOf(userId) === -1 &&
-            <button onClick={this.joinGame}>Deal cards</button>
+            <Button
+            color="secondary"
+            variant="contained"
+            size="big" onClick={this.joinGame}>Deal me some cards!</Button>
           }
 
           {

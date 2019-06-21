@@ -41,6 +41,7 @@ export default function ShowStack(props) {
         <div className="stack-last-card">
         {lastCardRender(lastCard)} 
         </div>
+        <div className="score-wrapper"></div>
       </div>
     )
   }
