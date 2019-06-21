@@ -27,14 +27,15 @@
     font-family: MedievalSharp;
     src: url("./icons/MedievalSharp/MedievalSharp.ttf");
   }
-  .last-card-stats {
+
+  .last-card-stats{
     display: flex;
     flex-direction: row;
     font-family: MedievalSharp;
     white-space: pre-wrap;
   }
 
-  .heart-code-card-standard-without-transformation, .heart-code-card-standard {
+  %standard-card {
     display: flex;
     font-family: MedievalSharp;
     font-size: 1em;
@@ -46,17 +47,22 @@
     border-radius: 5px;
   }
 
+  .heart-code-card-standard {
+    @extend %standard-card;
+  }
+
   .heart-code-card-standard:hover {
     top: -20px;
   }
 
   .heart-code-card-standard-without-transformation {
+    @extend %standard-card;
     font-size: 1.3em;
     text-align: center;
     flex-direction: column;
   }
 
-  .heart-code-card-standard-without-transformation span {
+  .heart-code-card-standard-without-transformation span{
     flex: 1;
     font-size: 0.7em;
     color: white;
@@ -67,7 +73,7 @@
   .heart-code-card-red {
     background: red;
     color: white;
-    background-image: url("./icons/ember-shot (1).png");
+    background-image: url("./icons/ember-shot\ \(1\).png");
     background-size: 100px 100px;
     background-repeat: no-repeat;
     background-position: center;
@@ -75,9 +81,9 @@
   }
 
   .heart-code-card-green {
-    background: #79d379;
+    background: rgb(121, 211, 121);
     color: white;
-    background-image: url("./icons/magic-potion (1).png");
+    background-image: url("./icons/magic-potion\ \(1\).png");
     background-size: 100px 100px;
     background-repeat: no-repeat;
     background-position: center;
@@ -112,7 +118,7 @@
   .heart-code-card-black {
     background: grey;
     color: white;
-    background-image: url("./icons/diablo-skull (1).png");
+    background-image: url("./icons/diablo-skull\ \(1\).png");
     background-size: 100px 100px;
     background-repeat: no-repeat;
     background-position: center;
@@ -168,6 +174,7 @@ MOBILE SCALING
     font-family: MedievalSharp;
     src: url("./icons/MedievalSharp/MedievalSharp.ttf");
   }
+
   .heart-code-card-standard {
     font-family: MedievalSharp;
     font-size: 1em;
@@ -199,7 +206,7 @@ MOBILE SCALING
 
   .heart-code-card-red {
     background: red;
-    background-image: url("./icons/ember-shot (1).png");
+    background-image: url("./icons/ember-shot\ \(1\).png");
     background-size: 80px 80px;
     background-repeat: no-repeat;
     background-position: center;
@@ -207,8 +214,8 @@ MOBILE SCALING
   }
 
   .heart-code-card-green {
-    background: #79d379;
-    background-image: url("./icons/magic-potion (1).png");
+    background: rgb(121, 211, 121);
+    background-image: url("./icons/magic-potion\ \(1\).png");
     background-size: 80px 80px;
     background-repeat: no-repeat;
     background-position: center;
@@ -241,7 +248,7 @@ MOBILE SCALING
   .heart-code-card-black {
     background: grey;
     color: white;
-    background-image: url("./icons/diablo-skull (1).png");
+    background-image: url("./icons/diablo-skull\ \(1\).png");
     background-size: 80px 80px;
     background-repeat: no-repeat;
     background-position: center;
@@ -257,5 +264,3 @@ MOBILE SCALING
     /* content: '+10 health'; */
   }
 }
-
-/*# sourceMappingURL=GameDetails.css.map */

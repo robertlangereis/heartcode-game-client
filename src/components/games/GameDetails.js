@@ -27,10 +27,10 @@ class GameDetails extends PureComponent {
     const player = game.players.find(p => p.userId === userId)
 
     if (player && player.symbol === game.turn) {
-      console.log("oncardclick test game: ", game)
+      // console.log("oncardclick test game: ", game)
       this.props.updateGame(game.id, cardId)
     } else {
-      console.log("Its not your turn, Asshole")
+      console.log("Its not your turn")
     }
   }
 
@@ -46,17 +46,18 @@ class GameDetails extends PureComponent {
 
     const player = game.players.find(p => p.userId === userId)
     const opponent = game.players.find(p => p.userId !== userId)
+    // const user = users.map(u => u.id === player.userId)
   
     const opponentStats = opponent &&
-      game.status !== 'pending' &&
+      game.status !== 'Waiting for opponent to join game' &&
       <ShowOpponentStats score={opponent.score}/>
     
-    console.log("stack check", game.stack)
-    const stack = game.stack && 
-      <ShowStack stack={game.stack}/>
+    const stack = game.status !== 'Waiting for opponent to join game'  && 
+      <ShowStack stack={game.stack} player={player} 
+      />
 
     const hand = player &&
-      game.status !== 'pending' &&
+      game.status !== 'Waiting for opponent to join game' &&
       <ShowHand
         hand={player.hand}
         playerScore={player.score}
@@ -86,7 +87,7 @@ class GameDetails extends PureComponent {
           {
             game.status === 'pending' &&
             game.players.map(p => p.userId).indexOf(userId) === -1 &&
-            <button onClick={this.joinGame}>Join Game</button>
+            <button onClick={this.joinGame}>Deal cards</button>
           }
 
           {
