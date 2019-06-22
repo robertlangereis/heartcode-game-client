@@ -40,8 +40,11 @@ export default function ShowStack(props) {
       <div> 
         <div className="stack-last-card">
         {lastCardRender(lastCard)} 
+        <div className="turn-wrapper">
+        { props.player.symbol === props.game.turn && `It's your turn`}
+        { props.player.symbol !== props.game.turn && `It's not your turn`}
+         </div>
         </div>
-        <div className="score-wrapper"></div>
       </div>
     )
   }

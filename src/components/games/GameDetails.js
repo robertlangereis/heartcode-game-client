@@ -54,7 +54,7 @@ class GameDetails extends PureComponent {
       <ShowOpponentStats score={opponent.score}/>
     
     const stack = game.status !== 'Waiting for opponent to join game'  && 
-      <ShowStack stack={game.stack} player={player} 
+      <ShowStack stack={game.stack} player={player} game={game} 
       />
 
     const hand = player &&
@@ -75,9 +75,6 @@ class GameDetails extends PureComponent {
         <h1>Game #{game.id}</h1>
 
           <p>Status: {game.status}</p>
-
-          { player && player.symbol && <p>Symbol: {player.symbol}</p> }
-
           {
             game.status === 'started' &&
             player &&

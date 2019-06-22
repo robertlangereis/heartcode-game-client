@@ -1,11 +1,21 @@
 /*DESKTOP SCALING*/
 @media only screen and (min-width: 640px) {
   .outer-paper {
+    background-image: url("./icons/wood.jpg");
+    background-repeat: repeat;
+    background-size: 1000px 800px;
     margin-top: 20px;
     margin: auto;
     padding: 20px;
     width: 80%;
     cursor: url("./icons/cur1158.png"), auto;
+  }
+  p{
+    color: red
+  }
+
+  h1{
+    color: purple;
   }
 
   .player-hand {
@@ -15,17 +25,34 @@
   .opponent-stats {
     display: flex;
   }
-  .stack-last-card{
-    // margin-right:
+  .stack-last-card {
     margin: 10px 100px 10px 0;
+    margin-left:auto; 
+    // margin-right:100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
   }
 
   .score-wrapper {
-    flex-direction: row;
+    flex-direction: column;
     font-family: MedievalSharp;
-    font-size: 1.0em;
+    font-size: 1.3em;
     white-space: pre-wrap;
     max-width: 100px;
+    color: white;
+  }
+
+  .turn-wrapper {
+    flex-direction: column;
+    font-family: MedievalSharp;
+    font-size: 1.8em;
+    text-align: center;
+    white-space: pre-wrap;
+    max-width: 100px;
+    margin-left: -100px;
+    color: white;
   }
 
   @font-face {
@@ -61,6 +88,8 @@
 
   .heart-code-card-standard-without-transformation {
     @extend %standard-card;
+    width: 150px;
+    height: 250px;
     font-size: 1.3em;
     text-align: center;
     flex-direction: column;
@@ -92,10 +121,10 @@
     background-size: 100px 100px;
     background-repeat: no-repeat;
     background-position: center;
-    /* content: '+ health'; */
   }
 
   .heart-code-card-back {
+    background: white;
     background-image: url("./icons/heart-code-logo.png");
     color: white;
     background-size: 100px 100px;
@@ -146,17 +175,13 @@
 
 MOBILE SCALING
 
-
-
-
-
 */
 @media only screen and (max-width: 640px) {
   .outer-paper {
     margin-top: 20px;
     margin: auto;
     padding: 20px;
-    width: 80%;
+    width: 95%;
     cursor: url("./icons/cur1158.png"), auto;
   }
 
@@ -167,13 +192,33 @@ MOBILE SCALING
   .opponent-stats {
     display: flex;
   }
+  .stack-last-card {
+    margin: 10px 100px 10px 0;
+    margin-left:auto; 
+    // margin-right:100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  
+  }
 
   .score-wrapper {
-    flex-direction: row;
+    flex-direction: column;
     font-family: MedievalSharp;
-    font-size: 2em;
+    font-size: 1em;
     white-space: pre-wrap;
-    // min-width: 100px;
+    max-width: 100px;
+    min-width: 100px;
+  }
+
+  .turn-wrapper {
+    font-family: MedievalSharp;
+    font-size: 1em;
+    white-space: pre-wrap;
+    // max-width: 100px;
+    // margin-left: 50px;
+    // align-content: right;
   }
 
   @font-face {
@@ -210,24 +255,24 @@ MOBILE SCALING
 
   .heart-code-card-standard-without-transformation {
     @extend %standard-mobile-card;
-    font-size: 1.3em;
+    font-size: 1.0em;
     text-align: center;
     flex-direction: column;
   }
 
   .heart-code-card-standard-without-transformation span {
     flex: 1;
-    font-size: 1.3em;
+    font-size: 0.85em;
     color: white;
-    margin-top: 95%;
-    margin-bottom: 0%;
+    margin-top: 125%;
+    // margin-bottom: 0%;
   }
 
   .heart-code-card-red {
     background: red;
     color: white;
     background-image: url("./icons/ember-shot\ \(1\).png");
-    background-size: 100px 100px;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
     /* content: 'attack point(s)'; */
@@ -237,7 +282,7 @@ MOBILE SCALING
     background: rgb(121, 211, 121);
     color: white;
     background-image: url("./icons/magic-potion\ \(1\).png");
-    background-size: 100px 100px;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
     /* content: '+ health'; */
@@ -246,14 +291,14 @@ MOBILE SCALING
   .heart-code-card-back {
     background-image: url("./icons/heart-code-logo.png");
     color: white;
-    background-size: 100px 100px;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
   }
 
   .heart-code-card-stack {
     background-image: url("./icons/heart-code-logo.png");
-    background-size: 100px 100px;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -262,7 +307,7 @@ MOBILE SCALING
     background: lightskyblue;
     color: white;
     background-image: url("./icons/magic-portal.png");
-    background-size: 100px 100px;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
     /* content: 'counter-card!'; */
@@ -272,7 +317,7 @@ MOBILE SCALING
     background: grey;
     color: white;
     background-image: url("./icons/diablo-skull\ \(1\).png");
-    background-size: 100px 100px;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
     /* content: '10 attack points'; */
@@ -282,7 +327,7 @@ MOBILE SCALING
     background: purple;
     color: white;
     background-image: url("./icons/crenulated-shield.png");
-    background-size: 100px 100px;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
     /* content: '+10 health'; */
