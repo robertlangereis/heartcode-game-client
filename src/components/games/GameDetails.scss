@@ -1,21 +1,31 @@
 /*DESKTOP SCALING*/
 @media only screen and (min-width: 640px) {
   .outer-paper {
-    background-image: url("./icons/wood.jpg");
-    background-repeat: repeat;
-    background-size: 1000px 800px;
     margin-top: 20px;
     margin: auto;
     padding: 20px;
     width: 80%;
     cursor: url("./icons/cur1158.png"), auto;
-  }
-  p{
-    color: red
+    background-image: url("./icons/travel.jpg");
+    background-size: 1394px 2000px;
   }
 
-  h1{
-    color: purple;
+  h1 {
+    color: rgb(255, 255, 255);
+    font-size: 2.5em;
+    text-align: center;
+    margin-right: +100px;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    margin-right: +100px;
+    padding: 20px 0px;
+  }
+  p {
+    color: rgb(131, 7, 7);
+    font-size: 1.5em;
   }
 
   .player-hand {
@@ -26,13 +36,12 @@
     display: flex;
   }
   .stack-last-card {
-    margin: 10px 100px 10px 0;
-    margin-left:auto; 
-    // margin-right:100px;
+    margin: 10px 0px 10px 0;
+    margin-right: auto;
+    margin-left: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-  
   }
 
   .score-wrapper {
@@ -45,13 +54,15 @@
   }
 
   .turn-wrapper {
+    width: 200px;
     flex-direction: column;
-    font-family: MedievalSharp;
-    font-size: 1.8em;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
     text-align: center;
     white-space: pre-wrap;
-    max-width: 100px;
-    margin-left: -100px;
+    margin-left: -200px;
+    padding-right: 100px;
+    // margin-right: -100px;
     color: white;
   }
 
@@ -194,13 +205,12 @@ MOBILE SCALING
   }
   .stack-last-card {
     margin: 10px 100px 10px 0;
-    margin-left:auto; 
+    margin-left: auto;
     // margin-right:100px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-  
   }
 
   .score-wrapper {
@@ -255,7 +265,7 @@ MOBILE SCALING
 
   .heart-code-card-standard-without-transformation {
     @extend %standard-mobile-card;
-    font-size: 1.0em;
+    font-size: 1em;
     text-align: center;
     flex-direction: column;
   }

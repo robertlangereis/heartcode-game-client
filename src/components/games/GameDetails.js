@@ -70,9 +70,7 @@ class GameDetails extends PureComponent {
 
     return (
       <Paper className="outer-paper">
-        <h1>Game #{game.id}</h1>
-
-          <p>Status: {game.status}</p>
+        <h1>Game #{game.id} <br></br> Status: {game.status}</h1>
           {
             game.status === 'started' &&
             player &&
@@ -83,10 +81,12 @@ class GameDetails extends PureComponent {
           {
             game.status === 'pending' &&
             game.players.map(p => p.userId).indexOf(userId) === -1 &&
-            <Button
+            <div className='button'><Button
             color="secondary"
             variant="contained"
-            size="big" onClick={this.joinGame}>Deal me some cards!</Button>
+            size="big" onClick={this.joinGame}
+            style={{justifyContent: 'center'}}>Deal me some cards!</Button>
+            </div>
           }
 
           {

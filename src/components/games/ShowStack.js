@@ -3,9 +3,8 @@ import './GameDetails.css'
 
 export default function ShowStack(props) {
   const lastCard = props.stack[props.stack.length-1]
-  // const player = props.player
-  // console.log(player.symbol)
-  
+  const game = props.game
+
   if(lastCard){
     const className = `heart-code-card-${lastCard.color} heart-code-card-standard-without-transformation`
     function lastCardRender(lastCard){
@@ -43,12 +42,21 @@ export default function ShowStack(props) {
         <div className="turn-wrapper">
         { props.player.symbol === props.game.turn && `It's your turn`}
         { props.player.symbol !== props.game.turn && `It's not your turn`}
+        
          </div>
         </div>
       </div>
     )
   }
 
-  else 
-  return (<div className="heart-code-card-back heart-code-card-standard-without-transformation"></div>)
+  else return (
+  <div className="stack-last-card">
+    <div className="heart-code-card-back heart-code-card-standard-without-transformation"></div>
+    <div className="turn-wrapper">
+    { game.status !== 'pending' && props.player.symbol === props.game.turn && `It's your turn`}
+    { game.status !== 'pending' && props.player.symbol !== props.game.turn && `It's not your turn`}
+    { game.status === 'pending' && "Waiting for opponent to join game"}
+    </div>
+  </div>
+      )
 }

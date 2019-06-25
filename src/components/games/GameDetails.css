@@ -1,22 +1,33 @@
+@charset "UTF-8";
 /*DESKTOP SCALING*/
 @media only screen and (min-width: 640px) {
   .outer-paper {
-    background-image: url("./icons/travel.jpg");
-    background-repeat: repeat;
-    background-size: 1394px 2000px;
     margin-top: 20px;
     margin: auto;
     padding: 20px;
     width: 80%;
     cursor: url("./icons/cur1158.png"), auto;
-  }
-
-  p {
-    color: red;
+    background-image: url("./icons/travel.jpg");
+    background-size: 1394px 2000px;
   }
 
   h1 {
-    color: purple;
+    color: white;
+    font-size: 2.5em;
+    text-align: center;
+    margin-right: 100px;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    margin-right: 100px;
+    padding: 20px 0px;
+  }
+
+  p {
+    color: #830707;
+    font-size: 1.5em;
   }
 
   .player-hand {
@@ -28,7 +39,8 @@
   }
 
   .stack-last-card {
-    margin: 10px 100px 10px 0;
+    margin: 10px 0px 10px 0;
+    margin-right: auto;
     margin-left: auto;
     display: flex;
     align-items: center;
@@ -45,13 +57,14 @@
   }
 
   .turn-wrapper {
+    width: 200px;
     flex-direction: column;
-    font-family: MedievalSharp;
-    font-size: 1.8em;
+    font-family: Impact, "Arial Narrow Bold", sans-serif;
+    font-size: 2em;
     text-align: center;
     white-space: pre-wrap;
-    max-width: 100px;
-    margin-left: -100px;
+    margin-left: -200px;
+    padding-right: 100px;
     color: white;
   }
 
@@ -66,8 +79,7 @@
     white-space: pre-wrap;
   }
 
-  .heart-code-card-standard-without-transformation,
-  .heart-code-card-standard {
+  .heart-code-card-standard-without-transformation, .heart-code-card-standard {
     display: flex;
     font-family: MedievalSharp;
     z-index: 5;
@@ -223,8 +235,7 @@ MOBILE SCALING
     white-space: pre-wrap;
   }
 
-  .heart-code-card-standard-without-transformation,
-  .heart-code-card-standard {
+  .heart-code-card-standard-without-transformation, .heart-code-card-standard {
     display: flex;
     font-family: MedievalSharp;
     font-size: 1em;
