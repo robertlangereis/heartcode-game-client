@@ -47,13 +47,12 @@ class GameDetails extends PureComponent {
 
     const player = game.players.find(p => p.userId === userId)
     const opponent = game.players.find(p => p.userId !== userId)
-    // const user = users.map(u => u.id === player.userId)
   
     const opponentStats = opponent &&
       game.status !== 'Waiting for opponent to join game' &&
       <ShowOpponentStats score={opponent.score}/>
     
-    const stack = game.status !== 'Waiting for opponent to join game'  && 
+    const stack = player && game.status !== 'Waiting for opponent to join game'  && 
       <ShowStack stack={game.stack} player={player} game={game} 
       />
 
@@ -65,7 +64,6 @@ class GameDetails extends PureComponent {
         onCardClick={this.onCardClick}
       />
 
-  
     const winner = game.players
       .filter(p => p.symbol === game.winner)
       .map(p => p.userId)[0]

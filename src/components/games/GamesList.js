@@ -54,9 +54,6 @@ class GamesList extends PureComponent {
   render() {
     const {games, users, authenticated, createGame} = this.props
 
-    console.log('games test:', games)
-
-
     if (!authenticated) return (
 			<Redirect to="/login" />
 		)
